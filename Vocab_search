@@ -1,0 +1,13 @@
+import requests
+
+keyword = input(
+    "Enter a keyword, I will search for words that rhyme with it: ")
+
+if keyword != "":
+    param = {'rel_rhy': keyword}
+    request_url = requests.get("https://api.datamuse.com/words", param)
+    result = request_url.json()
+    for top in result[0:5]:
+        print(top['word'])
+else:
+    print("Having issues with that keyword.")
