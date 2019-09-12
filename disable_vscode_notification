@@ -1,0 +1,9 @@
+# add this to your settings.json
+Goal: Shut off all notifications to vscode
+
+echo '{ "extensions.autoUpdate": false, \                                                                                                                                                              1 ↵
+  "workbench.settings.editor": "json" \
+  "git.showPushSuccessNotification": false, \ 
+  "git.supportCancellation": false, \
+  "extensions.ignoreRecommendations": false, \n\t}' \
+>> ~/Library/Application\ Support/Code/User/settings.json
