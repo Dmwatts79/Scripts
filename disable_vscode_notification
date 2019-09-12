@@ -1,5 +1,5 @@
 # add this to your settings.json
-Goal: Shut off all notifications to vscode
+# Goal: Shut off all notifications to vscode
 
 echo '{ "extensions.autoUpdate": false, \                                                                                                                                                              1 ↵
   "workbench.settings.editor": "json" \
