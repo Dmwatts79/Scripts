@@ -1,0 +1,23 @@
+#!/bin/bash
+  2
+  3 function convip()
+  4 {
+  5         CONV=({0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1}{0..1})
+  6
+  7         ip=""
+  8         for byte in `echo ${1} | tr "." " "`; do
+  9                 ip="${ip}.${CONV[${byte}]}"
+ 10         done
+ 11         echo ${ip:1}
+ 12 }
+ 13
+ 14 echo "What is the first ip"
+ 15 read ip_address_one
+ 16 echo "What is the second ip"
+ 17 read ip_address_two
+ 18
+ 19 first=`convip "${ip_address_one}"`
+ 20 second=`convip "${ip_address_two}"`
+ 21
+ 22 echo "${first}"
+ 23 echo "${second}"
