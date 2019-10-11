@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+# Wait for nautilus 
+while ! pgrep -f 'nautilus-desktop' > /dev/null; do 
+    sleep 1 
+done 
+
+# Trust all files in the given directory 
+
+for file in ~/home/admin/Desktop/*.desktop; do 
+[ -f "${file}" ] || break
+gio set "${file}" "metadata::trusted" yes
+done 
+
+# Restart nautilus or press F5.  
+killall nautilus-desktop && nautilus-desktop &
+
